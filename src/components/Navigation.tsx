@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpg";
@@ -31,9 +31,25 @@ const Navigation = () => {
   ];
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-primary/20"
-    >
+    <>
+      {/* Top Contact Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center md:justify-end h-10 text-sm gap-6">
+            <a href="tel:07542973733" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Phone className="h-4 w-4" />
+              <span className="hidden sm:inline">07542 973733</span>
+            </a>
+            <a href="mailto:Angeligardens1@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Mail className="h-4 w-4" />
+              <span className="hidden sm:inline">Angeligardens1@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <nav className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -122,7 +138,8 @@ const Navigation = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+      </nav>
+    </>
   );
 };
 
