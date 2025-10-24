@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground">
+      <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center md:justify-end h-10 text-sm gap-6">
             <a href="tel:07542973733" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -49,7 +49,7 @@ const Navigation = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-primary/20">
+      <nav className="bg-white shadow-md border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo and Badges */}
