@@ -79,10 +79,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: "10+", label: "Years Experience" },
     { value: "500+", label: "Projects Completed" },
     { value: "3", label: "Service Areas" },
     { value: "100%", label: "Satisfaction Rate" },
+    { value: "Licensed", label: "Green Waste" },
   ];
 
   return (
@@ -130,6 +130,10 @@ const Home = () => {
               <div className="flex items-center gap-2">
                 <Award size={18} />
                 <span>Fully Insured</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={18} />
+                <span>Green Waste Licensed</span>
               </div>
             </div>
           </motion.div>
@@ -260,16 +264,16 @@ const Home = () => {
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose Angeli Gardens?</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                With over a decade of experience, we bring expertise, reliability, and passion to every project.
+                Young, efficient, and reliable — we come fully equipped with professional tools to deliver exceptional results.
               </p>
               <div className="space-y-4">
                 {[
-                  "Professional, qualified team",
-                  "Fully insured & certified",
+                  "Efficient & reliable service",
+                  "Come with all professional tools",
+                  "Fully insured & green waste licensed",
                   "Transparent pricing - no hidden costs",
                   "Bespoke solutions for every garden",
-                  "Sustainable practices",
-                  "Excellent customer service",
+                  "Professional & trustworthy",
                 ].map((item, index) => (
                   <motion.div
                     key={item}
