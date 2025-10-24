@@ -122,26 +122,16 @@ const Home = () => {
                 </a>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-background/80">
-              <div className="flex items-center gap-2">
-                <MapPin size={18} />
-                <span>London • Surrey • Berkshire</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award size={18} />
-                <span>Fully Insured</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={18} />
-                <span>Green Waste Licensed</span>
-              </div>
+            <div className="mt-8 flex items-center gap-2 text-sm text-background/80">
+              <MapPin size={18} />
+              <span>Serving London • Surrey • Berkshire</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-primary text-primary-foreground">
+      <section className="py-12 bg-background border-y">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -153,50 +143,11 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-sm md:text-base text-primary-foreground/80">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-primary">{stat.value}</div>
+                <div className="text-sm md:text-base text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Quick Services */}
-      <section ref={servicesRef} className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From regular maintenance to complete garden transformations
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {quickServices.map((service, index) => (
-              <div key={service.title} className="service-card">
-                <ServiceCard {...service} index={index} />
-              </div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button size="lg" asChild>
-              <Link to="/services" className="flex items-center gap-2">
-                View All Services
-                <ArrowRight size={20} />
-              </Link>
-            </Button>
-          </motion.div>
         </div>
       </section>
 
@@ -248,6 +199,45 @@ const Home = () => {
           >
             <Button size="lg" variant="outline" asChild>
               <Link to="/portfolio">View Portfolio</Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Quick Services */}
+      <section ref={servicesRef} className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From regular maintenance to complete garden transformations
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {quickServices.map((service, index) => (
+              <div key={service.title} className="service-card">
+                <ServiceCard {...service} index={index} />
+              </div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Button size="lg" asChild>
+              <Link to="/services" className="flex items-center gap-2">
+                View All Services
+                <ArrowRight size={20} />
+              </Link>
             </Button>
           </motion.div>
         </div>

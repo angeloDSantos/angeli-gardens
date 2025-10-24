@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Award, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpg";
@@ -52,16 +52,30 @@ const Navigation = () => {
       <nav className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <img 
-                src={logo} 
-                alt="Angeli Gardens" 
-                className="h-16 w-auto transition-transform group-hover:scale-105 rounded-lg shadow-lg ring-2 ring-primary/30" 
-              />
+          {/* Logo and Badges */}
+          <div className="flex items-center gap-6">
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <img 
+                  src={logo} 
+                  alt="Angeli Gardens" 
+                  className="h-16 w-auto transition-transform group-hover:scale-105 rounded-lg shadow-lg ring-2 ring-primary/30" 
+                />
+              </div>
+            </Link>
+            
+            {/* Badges - Hidden on mobile */}
+            <div className="hidden md:flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-1.5">
+                <Award size={16} className="text-primary" />
+                <span>Fully Insured</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 size={16} className="text-primary" />
+                <span>Green Waste Licensed</span>
+              </div>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
