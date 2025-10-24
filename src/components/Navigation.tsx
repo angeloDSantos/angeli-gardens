@@ -32,15 +32,19 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-primary/20"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img src={logo} alt="Angeli Gardens" className="h-14 w-auto transition-transform group-hover:scale-105" />
+            <div className="relative">
+              <img 
+                src={logo} 
+                alt="Angeli Gardens" 
+                className="h-16 w-auto transition-transform group-hover:scale-105 rounded-lg shadow-lg ring-2 ring-primary/30" 
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

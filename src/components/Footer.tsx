@@ -11,7 +11,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img src={logo} alt="Angeli Gardens" className="h-16 w-auto brightness-0 invert" />
+            <div className="inline-block p-2 bg-white/10 rounded-lg">
+              <img src={logo} alt="Angeli Gardens" className="h-16 w-auto brightness-0 invert" />
+            </div>
             <p className="text-sm text-background/80">
               Transform your outdoor space with expert landscaping and garden services across London, Surrey & Berkshire.
             </p>
