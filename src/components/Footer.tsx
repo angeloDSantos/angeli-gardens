@@ -1,0 +1,120 @@
+import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.jpg";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-foreground text-background">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <img src={logo} alt="Angeli Gardens" className="h-16 w-auto brightness-0 invert" />
+            <p className="text-sm text-background/80">
+              Transform your outdoor space with expert landscaping and garden services across London, Surrey & Berkshire.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-heading text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-sm text-background/80 hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-sm text-background/80 hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-sm text-background/80 hover:text-primary transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/portfolio" className="text-sm text-background/80 hover:text-primary transition-colors">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-sm text-background/80 hover:text-primary transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-heading text-lg font-semibold mb-4">Our Services</h3>
+            <ul className="space-y-2 text-sm text-background/80">
+              <li>Garden Maintenance</li>
+              <li>Landscaping</li>
+              <li>Patios & Decking</li>
+              <li>Turfing & Lawn Care</li>
+              <li>Fencing</li>
+              <li>Garden Design</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-heading text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm text-background/80">
+                <Phone size={18} className="mt-1 flex-shrink-0" />
+                <a href="tel:07542973733" className="hover:text-primary transition-colors">
+                  07542 973733
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-background/80">
+                <Mail size={18} className="mt-1 flex-shrink-0" />
+                <a href="mailto:Angeligardens1@gmail.com" className="hover:text-primary transition-colors">
+                  Angeligardens1@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-background/80">
+                <MapPin size={18} className="mt-1 flex-shrink-0" />
+                <span>Serving London, Surrey & Berkshire</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-background/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-background/60">
+              © {currentYear} Angeli Gardens Ltd. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm text-background/60">
+              <Link to="/privacy" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-primary transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
