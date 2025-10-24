@@ -131,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-background border-y">
+      <section className="py-8 bg-background border-y">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -152,7 +152,7 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,7 +205,7 @@ const Home = () => {
       </section>
 
       {/* Quick Services */}
-      <section ref={servicesRef} className="py-20 bg-background">
+      <section ref={servicesRef} className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -244,7 +244,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -297,7 +297,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-12 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -317,9 +317,9 @@ const Home = () => {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
+                variant="secondary"
                 asChild
-                className="text-lg h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="text-lg h-14 px-8"
               >
                 <a href="tel:07542973733" className="flex items-center gap-2">
                   <Phone size={20} />
