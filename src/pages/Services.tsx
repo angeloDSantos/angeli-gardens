@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import ClickSpark from "@/components/ClickSpark";
 import {
   Leaf,
   Scissors,
@@ -112,10 +111,9 @@ const Services = () => {
   ];
 
   return (
-    <ClickSpark sparkColor="hsl(var(--primary))" sparkSize={12} sparkRadius={20} sparkCount={10}>
-      <div>
-        {/* Hero Section */}
-        <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+    <div>
+      {/* Hero Section */}
+      <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
           {/* Floating gardening animations */}
           <motion.div
             className="absolute top-10 left-[10%] text-primary-foreground/20"
@@ -369,8 +367,7 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
-      </div>
-    </ClickSpark>
+    </div>
   );
 };
 
