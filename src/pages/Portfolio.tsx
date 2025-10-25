@@ -53,7 +53,7 @@ const Portfolio = () => {
       challenge: "Large garden with neglected lawn requiring comprehensive care",
       solution: "Implemented scarification, aeration, overseeding, and regular maintenance schedule",
       outcome: "Vibrant, healthy lawn restored to its full potential with ongoing care",
-      image: project3,
+      image: project1,
     },
     {
       id: 4,
