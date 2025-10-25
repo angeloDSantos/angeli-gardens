@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, Award, CheckCircle2 } from "lucide-react";
+import { Menu, X, Phone, Mail, Award, CheckCircle2, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpg";
@@ -73,6 +73,10 @@ const Navigation = () => {
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 size={16} className="text-primary" />
                 <span>Green Waste Licensed</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Wrench size={16} className="text-primary" />
+                <span>Fully Equipped</span>
               </div>
             </div>
           </div>
