@@ -16,6 +16,7 @@ import {
   Sprout,
   WashingMachine,
   ArrowLeft,
+  CheckCircle2,
 } from "lucide-react";
 
 const Services = () => {
@@ -200,6 +201,12 @@ const Services = () => {
                 Every garden is unique, and we believe your quote should be too. Contact us for a free, personalized consultation 
                 and detailed quote tailored to your specific needs and budget.
               </p>
+              <div className="bg-background/50 border border-primary/30 rounded-lg p-4 mb-6">
+                <p className="text-sm font-medium flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                  We come fully equipped with all professional tools - no additional equipment charges
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
                   <Link to="/contact">Get Your Free Quote</Link>

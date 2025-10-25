@@ -78,7 +78,7 @@ const About = () => {
                   What started as a one-person operation has grown into a trusted team of skilled professionals, but our core values remain unchanged. We believe every garden tells a story, and we're here to help you write yours.
                 </p>
                 <p>
-                  From regular maintenance to complete landscape transformations, we approach every project with the same dedication to quality, sustainability, and customer satisfaction.
+                  From regular maintenance to complete landscape transformations, we approach every project with the same dedication to quality, sustainability, and customer satisfaction. We come fully equipped with all professional tools, so you never have to worry about additional equipment costs.
                 </p>
                 <p>
                   Today, we proudly serve clients across London, Surrey, and Berkshire, bringing expertise, reliability, and creative vision to gardens of all sizes.
