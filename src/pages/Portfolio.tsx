@@ -33,7 +33,7 @@ const Portfolio = () => {
       challenge: "Transform an overgrown, unusable garden into a modern outdoor living space",
       solution: "Designed and installed a multi-level composite deck with integrated pond, surrounded by thoughtfully planned planting beds",
       outcome: "A stunning, low-maintenance garden that has become the heart of the home, perfect for entertaining",
-      image: project1,
+      image: project3,
     },
     {
       id: 2,
