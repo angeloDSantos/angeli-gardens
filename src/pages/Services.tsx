@@ -15,6 +15,7 @@ import {
   Palette,
   Sprout,
   WashingMachine,
+  ArrowLeft,
 } from "lucide-react";
 
 const Services = () => {
@@ -35,7 +36,7 @@ const Services = () => {
       icon: TreePine,
       title: "Tree Pruning & Surgery",
       description: "Expert tree care to maintain health and safety",
-      features: ["Crown reduction", "Dead wood removal", "Tree health assessment", "Stump grinding"],
+      features: ["Crown reduction", "Dead wood removal", "Stump grinding"],
     },
     {
       icon: WashingMachine,
@@ -113,6 +114,13 @@ const Services = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Home</span>
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

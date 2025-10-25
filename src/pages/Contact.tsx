@@ -17,7 +17,8 @@ import {
 } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -105,6 +106,13 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Home</span>
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

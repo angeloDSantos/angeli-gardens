@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Award, Users, Target, Heart } from "lucide-react";
+import { Award, Users, Target, Heart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import project3 from "@/assets/project-3.jpg";
 
 const About = () => {
@@ -39,6 +40,13 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Home</span>
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

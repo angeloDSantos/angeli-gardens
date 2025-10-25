@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -80,6 +81,13 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Home</span>
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
