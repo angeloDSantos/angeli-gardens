@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ClickSpark from "@/components/ClickSpark";
 import {
   Leaf,
   Scissors,
@@ -111,10 +112,72 @@ const Services = () => {
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+    <ClickSpark sparkColor="hsl(var(--primary))" sparkSize={12} sparkRadius={20} sparkCount={10}>
+      <div>
+        {/* Hero Section */}
+        <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+          {/* Floating gardening animations */}
+          <motion.div
+            className="absolute top-10 left-[10%] text-primary-foreground/20"
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Scissors size={40} />
+          </motion.div>
+          
+          <motion.div
+            className="absolute top-20 right-[15%] text-primary-foreground/20"
+            animate={{
+              y: [0, 20, 0],
+              rotate: [0, -15, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <TreePine size={48} />
+          </motion.div>
+
+          <motion.div
+            className="absolute bottom-10 left-[20%] text-primary-foreground/20"
+            animate={{
+              y: [0, -15, 0],
+              x: [0, 10, 0],
+            }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Flower2 size={36} />
+          </motion.div>
+
+          <motion.div
+            className="absolute bottom-20 right-[25%] text-primary-foreground/20"
+            animate={{
+              y: [0, 15, 0],
+              rotate: [0, 20, 0],
+            }}
+            transition={{
+              duration: 4.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Leaf size={44} />
+          </motion.div>
+
+          <div className="container mx-auto px-4 relative z-10">
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
@@ -136,8 +199,39 @@ const Services = () => {
       </section>
 
       {/* Gardening & Maintenance */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Animated sprout */}
+        <motion.div
+          className="absolute top-10 right-[10%] text-primary/10"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Sprout size={60} />
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-20 left-[5%] text-primary/10"
+          animate={{
+            y: [0, -10, 0],
+            rotate: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Leaf size={50} />
+        </motion.div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -159,8 +253,39 @@ const Services = () => {
       </section>
 
       {/* Hard & Soft Landscaping */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-muted/30 relative overflow-hidden">
+        {/* Animated tools */}
+        <motion.div
+          className="absolute top-16 left-[8%] text-primary/10"
+          animate={{
+            rotate: [0, 15, 0],
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 3.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Hammer size={55} />
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-16 right-[12%] text-primary/10"
+          animate={{
+            y: [0, 10, 0],
+            x: [0, -5, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Flower2 size={45} />
+        </motion.div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +369,8 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </ClickSpark>
   );
 };
 
