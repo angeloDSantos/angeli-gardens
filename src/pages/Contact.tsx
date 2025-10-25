@@ -69,6 +69,7 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
+    { value: "150-200", label: "Half Day (£150 - £200)" },
     { value: "200-500", label: "£200 - £500" },
     { value: "500-1500", label: "£500 - £1,500" },
     { value: "1500-5000", label: "£1,500 - £5,000" },
