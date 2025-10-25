@@ -192,7 +192,7 @@ const Services = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our minimum day rate is £200. All projects are priced individually based on scope, materials, and timeframe. 
+              Our minimum day rate is £200, with half days also available. All projects are priced individually based on scope, materials, and timeframe. 
               We provide detailed, no-obligation quotes with no hidden costs.
             </p>
             <div className="bg-primary/10 border-2 border-primary/20 rounded-lg p-8 mb-8">
