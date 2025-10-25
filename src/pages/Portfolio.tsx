@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import TiltedCard from "@/components/TiltedCard";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -135,22 +136,35 @@ const Portfolio = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setSelectedProject(project)}
-                  className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer shadow-lg hover:shadow-xl transition-all"
+                  className="group relative overflow-hidden rounded-lg aspect-[4/3]"
                 >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  <TiltedCard
+                    imageSrc={project.image}
+                    altText={project.title}
+                    captionText={project.title}
+                    containerHeight="100%"
+                    containerWidth="100%"
+                    imageHeight="100%"
+                    imageWidth="100%"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={true}
+                    onClick={() => setSelectedProject(project)}
+                    overlayContent={
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-background pointer-events-none">
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/50 to-transparent opacity-60" />
+                        <div className="relative z-10">
+                          <span className="inline-block px-3 py-1 bg-primary/90 text-primary-foreground text-xs font-medium rounded-full mb-3">
+                            {project.category === "landscaping" ? "Landscaping" : "Maintenance"}
+                          </span>
+                          <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                          <p className="text-background/90">{project.description}</p>
+                        </div>
+                      </div>
+                    }
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-background">
-                    <span className="inline-block px-3 py-1 bg-primary/90 text-primary-foreground text-xs font-medium rounded-full mb-3">
-                      {project.category === "landscaping" ? "Landscaping" : "Maintenance"}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-background/90">{project.description}</p>
-                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
