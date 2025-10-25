@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
-import { Phone, Mail, MapPin, Clock, ArrowLeft } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowLeft, Leaf, Sprout, Flower2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const formSchema = z.object({
@@ -105,7 +105,51 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground">
+      <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+        {/* Animated floating leaves */}
+        <motion.div
+          className="absolute top-10 left-10 text-primary-foreground/20"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Leaf size={48} />
+        </motion.div>
+        <motion.div
+          className="absolute top-20 right-20 text-primary-foreground/20"
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -15, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Flower2 size={40} />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 right-10 text-primary-foreground/20"
+          animate={{
+            y: [0, -15, 0],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 3.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Sprout size={36} />
+        </motion.div>
+        
         <div className="container mx-auto px-4">
           <Link 
             to="/" 
@@ -207,9 +251,29 @@ const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="relative"
             >
-              <div className="bg-card p-8 rounded-lg shadow-lg border-2">
-                <h2 className="text-2xl font-bold mb-6">Request a Quote</h2>
+              {/* Growing plant animation beside form */}
+              <motion.div
+                className="absolute -left-8 top-0 text-primary/30 hidden xl:block"
+                initial={{ scaleY: 0, originY: 1 }}
+                whileInView={{ scaleY: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <Sprout size={64} />
+              </motion.div>
+              
+              <div className="bg-card p-8 rounded-lg shadow-lg border-2 relative hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 mb-6">
+                  <motion.div
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  >
+                    <Leaf className="text-primary" size={28} />
+                  </motion.div>
+                  <h2 className="text-2xl font-bold">Request a Quote</h2>
+                </div>
                 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -382,8 +446,15 @@ const Contact = () => {
                       )}
                     />
 
-                    <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                    <Button type="submit" className="w-full group" size="lg" disabled={isSubmitting}>
                       {isSubmitting ? "Sending..." : "Request Free Quote"}
+                      <motion.span
+                        className="inline-block ml-2"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        🌱
+                      </motion.span>
                     </Button>
                   </form>
                 </Form>
