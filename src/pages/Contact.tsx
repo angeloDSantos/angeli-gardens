@@ -192,10 +192,10 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-muted/50 rounded-lg">
+              <div className="mt-8 p-6 bg-primary/10 rounded-lg border-2 border-primary/30">
                 <h3 className="font-bold mb-2">Minimum Day Rate</h3>
-                <p className="text-2xl font-bold text-primary mb-2">£200</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-2xl font-bold text-primary mb-4">£200</p>
+                <p className="text-base font-medium text-foreground">
                   All projects are individually quoted based on scope and materials. Contact us for a detailed, 
                   no-obligation quote tailored to your needs.
                 </p>
