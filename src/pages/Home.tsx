@@ -138,7 +138,7 @@ const Home = () => {
               Ready to Transform Your Garden?
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Get a free, no-obligation quote today. Our minimum day rate is £200.
+              Get a free, no-obligation quote today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild className="text-lg h-14 px-8">
