@@ -7,8 +7,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import project1 from "@/assets/project-1.jpg";
@@ -72,8 +70,6 @@ const Home = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4" />
-          <CarouselNext className="right-4" />
         </Carousel>
 
         <div className="container mx-auto px-4 z-10">
@@ -83,10 +79,10 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl text-background"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-balance tracking-tight">
               Transform Your Outdoor Space
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-background/90">
+            <p className="text-xl md:text-2xl mb-8 text-background/90 font-light">
               Expert landscaping and garden services across London, Surrey & Berkshire
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
