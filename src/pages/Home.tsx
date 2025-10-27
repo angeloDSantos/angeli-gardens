@@ -4,78 +4,44 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import ServiceCard from "@/components/ServiceCard";
-import { 
-  Leaf, 
-  Scissors, 
-  TreePine, 
-  Fence, 
-  Droplets,
-  Grid3x3,
-  Phone,
-  MapPin,
-  Award,
-  Users,
-  CheckCircle2,
-  ArrowRight
-} from "lucide-react";
-import heroImage from "@/assets/hero-garden.jpg";
+import { Phone, MapPin } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import beforeAfter1 from "@/assets/before-after-1.jpg";
+import beforeAfter2 from "@/assets/before-after-2.jpg";
+import beforeAfter3 from "@/assets/before-after-3.jpg";
+import beforeAfter4 from "@/assets/before-after-4.jpg";
+import beforeAfter5 from "@/assets/before-after-5.jpg";
+import beforeAfter6 from "@/assets/before-after-6.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  );
 
-  useEffect(() => {
-    // Hero parallax effect
-    if (heroRef.current) {
-      gsap.to(heroRef.current.querySelector(".parallax-bg"), {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
-
-    // Services reveal animation
-    if (servicesRef.current) {
-      const cards = servicesRef.current.querySelectorAll(".service-card");
-      cards.forEach((card, index) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            delay: index * 0.1,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-            },
-          }
-        );
-      });
-    }
-  }, []);
-
-  const quickServices = [
-    { icon: Leaf, title: "Garden Maintenance", description: "Regular care for thriving gardens" },
-    { icon: Scissors, title: "Hedge Trimming", description: "Precise shaping & maintenance" },
-    { icon: TreePine, title: "Tree Pruning", description: "Expert tree care services" },
-    { icon: Fence, title: "Fencing", description: "Quality fencing installation" },
-    { icon: Droplets, title: "Irrigation", description: "Smart watering solutions" },
-    { icon: Grid3x3, title: "Patios & Decking", description: "Beautiful outdoor spaces" },
+  const carouselImages = [
+    beforeAfter1,
+    beforeAfter2,
+    beforeAfter3,
+    beforeAfter4,
+    beforeAfter5,
+    beforeAfter6,
+    project1,
+    project2,
+    project3,
+    project4,
   ];
 
   const stats = [
@@ -88,15 +54,31 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
-        <div className="parallax-bg absolute inset-0 -z-10">
-          <img
-            src={heroImage}
-            alt="Beautiful landscaped garden"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
-        </div>
+      <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+        <Carousel
+          plugins={[autoplayPlugin.current]}
+          className="absolute inset-0 -z-10"
+          opts={{
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            {carouselImages.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="relative h-[90vh] min-h-[600px]">
+                  <img
+                    src={image}
+                    alt={`Recent landscaping project ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4" />
+          <CarouselNext className="right-4" />
+        </Carousel>
 
         <div className="container mx-auto px-4 z-10">
           <motion.div
@@ -201,98 +183,6 @@ const Home = () => {
               <Link to="/portfolio">View Portfolio</Link>
             </Button>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Quick Services */}
-      <section ref={servicesRef} className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From regular maintenance to complete garden transformations
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {quickServices.map((service, index) => (
-              <div key={service.title} className="service-card">
-                <ServiceCard {...service} index={index} />
-              </div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button size="lg" asChild>
-              <Link to="/services" className="flex items-center gap-2">
-                View All Services
-                <ArrowRight size={20} />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose Angeli Gardens?</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Young, efficient, and reliable — we come fully equipped with professional tools to deliver exceptional results.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Efficient & reliable service",
-                  "Come with all professional tools",
-                  "Fully insured & green waste licensed",
-                  "Transparent pricing - no hidden costs",
-                  "Bespoke solutions for every garden",
-                  "Professional & trustworthy",
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-lg">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <img
-                src={project2}
-                alt="Quality workmanship"
-                className="rounded-lg shadow-2xl"
-              />
-            </motion.div>
-          </div>
         </div>
       </section>
 
