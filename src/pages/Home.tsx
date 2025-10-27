@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin } from "lucide-react";
 import {
@@ -23,8 +21,6 @@ import beforeAfter3 from "@/assets/before-after-3.jpg";
 import beforeAfter4 from "@/assets/before-after-4.jpg";
 import beforeAfter5 from "@/assets/before-after-5.jpg";
 import beforeAfter6 from "@/assets/before-after-6.jpg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const autoplayPlugin = useRef(
@@ -130,59 +126,6 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Recent Projects</h2>
-            <p className="text-xl text-muted-foreground">
-              See how we've transformed outdoor spaces
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[project1, project2, project3, project4].map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
-              >
-                <img
-                  src={project}
-                  alt={`Project ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-background">
-                    <h3 className="text-2xl font-bold mb-2">Garden Transformation</h3>
-                    <p className="text-background/90">Professional landscaping & maintenance</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/portfolio">View Portfolio</Link>
-            </Button>
-          </motion.div>
         </div>
       </section>
 
