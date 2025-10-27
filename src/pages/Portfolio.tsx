@@ -8,6 +8,12 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import beforeAfter1 from "@/assets/before-after-1.jpg";
+import beforeAfter2 from "@/assets/before-after-2.jpg";
+import beforeAfter3 from "@/assets/before-after-3.jpg";
+import beforeAfter4 from "@/assets/before-after-4.jpg";
+import beforeAfter5 from "@/assets/before-after-5.jpg";
+import beforeAfter6 from "@/assets/before-after-6.jpg";
 
 interface Project {
   id: number;
@@ -64,6 +70,66 @@ const Portfolio = () => {
       solution: "Installed modern patio with quality paving, complemented by refined lawn and border work",
       outcome: "Elegant outdoor living area that seamlessly connects indoor and outdoor spaces",
       image: project4,
+    },
+    {
+      id: 5,
+      title: "Garden Transformation",
+      category: "landscaping",
+      description: "Complete garden renovation and landscaping project",
+      challenge: "Overgrown garden requiring complete redesign and installation",
+      solution: "Full clearance, new layout design, quality materials and professional installation",
+      outcome: "A beautiful, functional outdoor space perfect for family enjoyment",
+      image: beforeAfter1,
+    },
+    {
+      id: 6,
+      title: "Professional Garden Maintenance",
+      category: "maintenance",
+      description: "Regular maintenance and seasonal care program",
+      challenge: "Maintaining a pristine garden throughout the year",
+      solution: "Weekly maintenance visits with expert care and attention to detail",
+      outcome: "A consistently beautiful garden that thrives in all seasons",
+      image: beforeAfter2,
+    },
+    {
+      id: 7,
+      title: "Landscape Redesign",
+      category: "landscaping",
+      description: "Modern landscape design with quality hardscaping",
+      challenge: "Dated garden requiring contemporary update",
+      solution: "New paving, updated planting scheme, and improved garden structure",
+      outcome: "A fresh, modern garden that enhances the property value",
+      image: beforeAfter3,
+    },
+    {
+      id: 8,
+      title: "Garden Clearance & Restoration",
+      category: "maintenance",
+      description: "Complete clearance and garden restoration",
+      challenge: "Severely overgrown garden requiring extensive clearance",
+      solution: "Systematic clearance, soil improvement, and careful replanting",
+      outcome: "A rejuvenated garden space ready for enjoyment",
+      image: beforeAfter4,
+    },
+    {
+      id: 9,
+      title: "Premium Landscaping Project",
+      category: "landscaping",
+      description: "High-end landscaping with quality materials and design",
+      challenge: "Creating an elegant outdoor entertaining space",
+      solution: "Premium materials, expert craftsmanship, and thoughtful design",
+      outcome: "A luxurious garden perfect for outdoor living and entertaining",
+      image: beforeAfter5,
+    },
+    {
+      id: 10,
+      title: "Garden Enhancement",
+      category: "maintenance",
+      description: "Ongoing care and garden enhancement program",
+      challenge: "Maintaining and improving an established garden",
+      solution: "Regular professional care with seasonal enhancements",
+      outcome: "A garden that continuously improves and delights",
+      image: beforeAfter6,
     },
   ];
 
