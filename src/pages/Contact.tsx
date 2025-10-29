@@ -26,7 +26,6 @@ const formSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
   postcode: z.string().min(3, "Please enter your postcode"),
   services: z.array(z.string()).min(1, "Please select at least one service"),
-  budget: z.string().min(1, "Please select a budget range"),
   preferredDate: z.string().optional(),
   message: z.string().min(10, "Please provide more details about your project"),
   contactMethod: z.enum(["phone", "email"]),
@@ -47,7 +46,6 @@ const Contact = () => {
       phone: "",
       postcode: "",
       services: [],
-      budget: "",
       preferredDate: "",
       message: "",
       contactMethod: "email",
@@ -68,13 +66,6 @@ const Contact = () => {
     "Other",
   ];
 
-  const budgetRanges = [
-    { value: "150-200", label: "Half Day (£150 - £200)" },
-    { value: "200-500", label: "£200 - £500" },
-    { value: "500-1500", label: "£500 - £1,500" },
-    { value: "1500-5000", label: "£1,500 - £5,000" },
-    { value: "5000+", label: "£5,000+" },
-  ];
 
   const toggleService = (service: string) => {
     const updated = selectedServices.includes(service)
@@ -350,31 +341,6 @@ const Contact = () => {
                               </div>
                             ))}
                           </div>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="budget"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Budget Range *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select your budget" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {budgetRanges.map((range) => (
-                                <SelectItem key={range.value} value={range.value}>
-                                  {range.label}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
                           <FormMessage />
                         </FormItem>
                       )}

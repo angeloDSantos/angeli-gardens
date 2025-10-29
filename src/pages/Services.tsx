@@ -306,8 +306,38 @@ const Services = () => {
 
 
       {/* Service Areas */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Animated floating elements */}
+        <motion.div
+          className="absolute top-10 left-[12%] text-primary-foreground/20"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Leaf size={48} />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 right-[10%] text-primary-foreground/20"
+          animate={{
+            y: [0, 15, 0],
+            rotate: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Flower2 size={40} />
+        </motion.div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

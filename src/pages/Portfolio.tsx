@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowLeft } from "lucide-react";
+import { X, ArrowLeft, Leaf, Flower2, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import TiltedCard from "@/components/TiltedCard";
@@ -146,8 +146,52 @@ const Portfolio = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+        {/* Animated floating elements */}
+        <motion.div
+          className="absolute top-10 left-[10%] text-primary-foreground/20"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Leaf size={48} />
+        </motion.div>
+        <motion.div
+          className="absolute top-20 right-[15%] text-primary-foreground/20"
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -15, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Flower2 size={40} />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 right-[10%] text-primary-foreground/20"
+          animate={{
+            y: [0, -15, 0],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 3.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Sprout size={36} />
+        </motion.div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors mb-6"
@@ -301,8 +345,38 @@ const Portfolio = () => {
       </Dialog>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Animated floating elements */}
+        <motion.div
+          className="absolute top-10 left-[8%] text-primary-foreground/20"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Leaf size={48} />
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 right-[12%] text-primary-foreground/20"
+          animate={{
+            y: [0, 15, 0],
+            rotate: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Flower2 size={40} />
+        </motion.div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

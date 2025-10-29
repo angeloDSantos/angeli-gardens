@@ -126,8 +126,38 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Animated floating elements */}
+        <motion.div
+          className="absolute top-8 left-[10%] text-primary-foreground/20"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Phone size={40} />
+        </motion.div>
+        <motion.div
+          className="absolute top-12 right-[15%] text-primary-foreground/20"
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -15, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <MapPin size={36} />
+        </motion.div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
