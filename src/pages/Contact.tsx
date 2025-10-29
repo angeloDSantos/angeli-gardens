@@ -75,24 +75,43 @@ const Contact = () => {
     form.setValue("services", updated);
   };
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log("Form submitted:", data);
-    
-    toast.success(
-      "Thanks for your enquiry! We'll respond within 48 hours. For urgent enquiries, call 07542 973733.",
-      { duration: 6000 }
-    );
-    
-    form.reset();
-    setSelectedServices([]);
-    setIsSubmitting(false);
-  };
+const onSubmit = async (data: FormData) => {
+  setIsSubmitting(true);
 
+  try {
+    // Prepare the payload to match your Supabase column names
+    const payload = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      postcode: data.postcode,
+      message: data.message,
+      contact_method: data.contactMethod,
+      services_required: data.services.join(", "), // convert array → string
+    };
+
+    // Insert the data into your 'quotes' table
+    const { error } = await supabase.from("quotes").insert([payload]);
+
+    if (error) {
+      console.error("Supabase error:", error.message);
+      toast.error("Something went wrong. Please try again later.");
+    } else {
+      toast.success(
+        "Thanks for your enquiry! We'll respond within 48 hours. For urgent enquiries, call 07542 973733.",
+        { duration: 6000 }
+      );
+
+      form.reset();
+      setSelectedServices([]);
+    }
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    toast.error("Unexpected error. Please try again later.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div>
       {/* Hero Section */}
