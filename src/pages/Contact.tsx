@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
