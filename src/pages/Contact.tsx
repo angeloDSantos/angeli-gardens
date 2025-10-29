@@ -91,8 +91,8 @@ const onSubmit = async (data: FormData) => {
       services_required: data.services.join(", "), // convert array → string
     };
 
-    // Insert the data into your 'quotes' table
-    const { error } = await supabase.from("quotes").insert([payload]);
+    // Insert the data into 'users' table (cast supabase to any to bypass strict DB types)
+    const { error } = await (supabase as any).from("users").insert([payload]);
 
     if (error) {
       console.error("Supabase error:", error.message);
