@@ -19,6 +19,12 @@ import beforeAfter3 from "@/assets/before-after-3.jpg";
 import beforeAfter4 from "@/assets/before-after-4.jpg";
 import beforeAfter5 from "@/assets/before-after-5.jpg";
 import beforeAfter6 from "@/assets/before-after-6.jpg";
+import lawnProject1 from "@/assets/lawn-project-1.jpg";
+import lawnProject2 from "@/assets/lawn-project-2.jpg";
+import lawnProject3 from "@/assets/lawn-project-3.jpg";
+import lawnProject4 from "@/assets/lawn-project-4.jpg";
+import lawnProject5 from "@/assets/lawn-project-5.jpg";
+import lawnProject6 from "@/assets/lawn-project-6.jpg";
 
 const Home = () => {
   const autoplayPlugin = useRef(
@@ -36,6 +42,12 @@ const Home = () => {
     project2,
     project3,
     project4,
+    lawnProject1,
+    lawnProject2,
+    lawnProject3,
+    lawnProject4,
+    lawnProject5,
+    lawnProject6,
   ];
 
   const stats = [

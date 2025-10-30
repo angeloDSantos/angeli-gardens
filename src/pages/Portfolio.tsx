@@ -14,6 +14,12 @@ import beforeAfter3 from "@/assets/before-after-3.jpg";
 import beforeAfter4 from "@/assets/before-after-4.jpg";
 import beforeAfter5 from "@/assets/before-after-5.jpg";
 import beforeAfter6 from "@/assets/before-after-6.jpg";
+import lawnProject1 from "@/assets/lawn-project-1.jpg";
+import lawnProject2 from "@/assets/lawn-project-2.jpg";
+import lawnProject3 from "@/assets/lawn-project-3.jpg";
+import lawnProject4 from "@/assets/lawn-project-4.jpg";
+import lawnProject5 from "@/assets/lawn-project-5.jpg";
+import lawnProject6 from "@/assets/lawn-project-6.jpg";
 
 interface Project {
   id: number;
@@ -130,6 +136,66 @@ const Portfolio = () => {
       solution: "Regular professional care with seasonal enhancements",
       outcome: "A garden that continuously improves and delights",
       image: beforeAfter6,
+    },
+    {
+      id: 11,
+      title: "Autumn Lawn Care",
+      category: "maintenance",
+      description: "Professional lawn maintenance and leaf clearance",
+      challenge: "Managing autumn leaf fall while maintaining pristine lawn stripes",
+      solution: "Regular mowing with professional striping, leaf clearance, and seasonal care",
+      outcome: "Beautiful striped lawn maintained throughout autumn season",
+      image: lawnProject1,
+    },
+    {
+      id: 12,
+      title: "Precision Lawn Striping",
+      category: "maintenance",
+      description: "Expert lawn care with professional striping technique",
+      challenge: "Achieving and maintaining perfect lawn stripes on established grass",
+      solution: "Professional mowing techniques with careful attention to cutting height and pattern",
+      outcome: "Stunning striped lawn that enhances the entire garden aesthetic",
+      image: lawnProject2,
+    },
+    {
+      id: 13,
+      title: "Sloped Lawn Maintenance",
+      category: "maintenance",
+      description: "Specialized care for challenging sloped lawns",
+      challenge: "Maintaining even growth and appearance on a sloped garden lawn",
+      solution: "Expert mowing techniques adapted for slopes, with careful edge work",
+      outcome: "Perfectly maintained sloped lawn with professional finish",
+      image: lawnProject3,
+    },
+    {
+      id: 14,
+      title: "Orchard Lawn Care",
+      category: "maintenance",
+      description: "Lawn maintenance around mature fruit trees",
+      challenge: "Caring for grass around established trees while managing fallen fruit",
+      solution: "Careful mowing around tree roots with fruit collection and lawn care",
+      outcome: "Healthy lawn complementing mature orchard trees beautifully",
+      image: lawnProject4,
+    },
+    {
+      id: 15,
+      title: "Large Garden Maintenance",
+      category: "maintenance",
+      description: "Comprehensive lawn care for expansive garden spaces",
+      challenge: "Maintaining large lawn areas with consistent quality and appearance",
+      solution: "Efficient professional mowing with attention to detail across entire space",
+      outcome: "Immaculate large lawn area perfect for family enjoyment",
+      image: lawnProject5,
+    },
+    {
+      id: 16,
+      title: "Premium Lawn Maintenance",
+      category: "maintenance",
+      description: "Regular professional lawn care and striping service",
+      challenge: "Maintaining consistent quality and appearance week after week",
+      solution: "Weekly professional visits with precise mowing and striping technique",
+      outcome: "Consistently beautiful lawn that remains pristine year-round",
+      image: lawnProject6,
     },
   ];
 
