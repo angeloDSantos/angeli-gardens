@@ -32,6 +32,12 @@ const Home = () => {
   );
 
   const carouselImages = [
+    lawnProject1,
+    lawnProject2,
+    lawnProject3,
+    lawnProject4,
+    lawnProject5,
+    lawnProject6,
     beforeAfter1,
     beforeAfter2,
     beforeAfter3,
@@ -42,12 +48,6 @@ const Home = () => {
     project2,
     project3,
     project4,
-    lawnProject1,
-    lawnProject2,
-    lawnProject3,
-    lawnProject4,
-    lawnProject5,
-    lawnProject6,
   ];
 
   const stats = [
