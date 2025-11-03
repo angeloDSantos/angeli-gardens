@@ -82,17 +82,18 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-2">
             {navLinks.map((link) => (
-              <Link
+              <Button
                 key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.path ? "text-primary" : "text-foreground/80"
-                }`}
+                variant={location.pathname === link.path ? "default" : "ghost"}
+                size="sm"
+                asChild
               >
-                {link.name}
-              </Link>
+                <Link to={link.path}>
+                  {link.name}
+                </Link>
+              </Button>
             ))}
           </div>
 
