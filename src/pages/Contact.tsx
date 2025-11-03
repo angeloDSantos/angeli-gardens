@@ -1,14 +1,10 @@
-import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { useForm, ValidationError } from "@formspree/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -16,43 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, ArrowLeft, Leaf, Sprout, Flower2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  postcode: z.string().min(3, "Please enter your postcode"),
-  services: z.array(z.string()).min(1, "Please select at least one service"),
-  preferredDate: z.string().optional(),
-  message: z.string().min(10, "Please provide more details about your project"),
-  contactMethod: z.enum(["phone", "email"]),
-  gdprConsent: z.boolean().refine((val) => val === true, "You must accept the privacy policy"),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("myzbaqkk");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      postcode: "",
-      services: [],
-      preferredDate: "",
-      message: "",
-      contactMethod: "email",
-      gdprConsent: false,
-    },
-  });
+  const [contactMethod, setContactMethod] = useState("email");
+  const [gdprConsent, setGdprConsent] = useState(false);
 
   const services = [
     "Garden Maintenance",
@@ -67,52 +34,12 @@ const Contact = () => {
     "Other",
   ];
 
-
   const toggleService = (service: string) => {
     const updated = selectedServices.includes(service)
       ? selectedServices.filter((s) => s !== service)
       : [...selectedServices, service];
     setSelectedServices(updated);
-    form.setValue("services", updated);
   };
-
-const onSubmit = async (data: FormData) => {
-  setIsSubmitting(true);
-
-  try {
-    // Prepare the payload to match your Supabase column names
-    const payload = {
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      postcode: data.postcode,
-      message: data.message,
-      contact_method: data.contactMethod,
-      services_required: data.services.join(", "), // convert array → string
-    };
-
-    // Insert the data into 'users' table (cast supabase to any to bypass strict DB types)
-    const { error } = await (supabase as any).from("users").insert([payload]);
-
-    if (error) {
-      console.error("Supabase error:", error.message);
-      toast.error("Something went wrong. Please try again later.");
-    } else {
-      toast.success(
-        "Thanks for your enquiry! We'll respond within 48 hours. For urgent enquiries, call 07542 973733.",
-        { duration: 6000 }
-      );
-
-      form.reset();
-      setSelectedServices([]);
-    }
-  } catch (err) {
-    console.error("Unexpected error:", err);
-    toast.error("Unexpected error. Please try again later.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
   return (
     <div>
       {/* Hero Section */}
@@ -204,9 +131,17 @@ const onSubmit = async (data: FormData) => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <a href="tel:07542973733" className="text-muted-foreground hover:text-primary">
+                    <a href="tel:+447542973733" className="text-muted-foreground hover:text-primary">
                       07542 973733
                     </a>
+                    <div className="mt-2">
+                      <Button asChild size="sm" className="gap-2">
+                        <a href="tel:+447542973733">
+                          <Phone className="h-4 w-4" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
 
@@ -278,154 +213,169 @@ const onSubmit = async (data: FormData) => {
                   <h2 className="text-2xl font-bold">Request a Quote</h2>
                 </div>
                 
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Name *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your full name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email *</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="your@email.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
+                {state.succeeded ? (
+                  <div className="text-center py-8">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="text-primary mb-4"
+                    >
+                      <Flower2 size={64} className="mx-auto" />
+                    </motion.div>
+                    <p className="text-lg font-semibold text-primary mb-2">
+                      ✅ Thank you! Your enquiry has been sent.
+                    </p>
+                    <p className="text-muted-foreground">
+                      We'll get back to you within 48 hours. For urgent enquiries, call{" "}
+                      <a href="tel:+447542973733" className="text-primary hover:underline">
+                        07542 973733
+                      </a>
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                        Name *
+                      </label>
+                      <Input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="Your full name"
+                        required
                       />
-
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Phone *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="07XXX XXXXXX" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                      <ValidationError prefix="Name" field="name" errors={state.errors} />
                     </div>
 
-                    <FormField
-                      control={form.control}
-                      name="postcode"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Postcode *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="SW1A 1AA" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                          Email *
+                        </label>
+                        <Input
+                          id="email"
+                          type="email"
+                          name="email"
+                          placeholder="your@email.com"
+                          required
+                        />
+                        <ValidationError prefix="Email" field="email" errors={state.errors} />
+                      </div>
 
-                    <FormField
-                      control={form.control}
-                      name="services"
-                      render={() => (
-                        <FormItem>
-                          <FormLabel>Services Required *</FormLabel>
-                          <div className="grid grid-cols-2 gap-3">
-                            {services.map((service) => (
-                              <div key={service} className="flex items-center space-x-2">
-                                <Checkbox
-                                  id={service}
-                                  checked={selectedServices.includes(service)}
-                                  onCheckedChange={() => toggleService(service)}
-                                />
-                                <label
-                                  htmlFor={service}
-                                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                >
-                                  {service}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                          Phone *
+                        </label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          name="phone"
+                          placeholder="07XXX XXXXXX"
+                          required
+                          pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
+                          title="Enter a valid UK phone number"
+                        />
+                        <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+                      </div>
+                    </div>
 
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Project Details *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Tell us about your project..."
-                              className="min-h-[120px]"
-                              {...field}
+                    <div>
+                      <label htmlFor="postcode" className="block text-sm font-medium mb-2">
+                        Postcode *
+                      </label>
+                      <Input
+                        id="postcode"
+                        type="text"
+                        name="postcode"
+                        placeholder="SW1A 1AA"
+                        required
+                      />
+                      <ValidationError prefix="Postcode" field="postcode" errors={state.errors} />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Services Required *</label>
+                      <input
+                        type="hidden"
+                        name="services"
+                        value={selectedServices.join(", ")}
+                        required={selectedServices.length === 0}
+                      />
+                      <div className="grid grid-cols-2 gap-3">
+                        {services.map((service) => (
+                          <div key={service} className="flex items-center space-x-2">
+                            <Checkbox
+                              id={service}
+                              checked={selectedServices.includes(service)}
+                              onCheckedChange={() => toggleService(service)}
                             />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="contactMethod"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Preferred Contact Method *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="email">Email</SelectItem>
-                              <SelectItem value="phone">Phone</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="gdprConsent"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel>
-                              I agree to the privacy policy and consent to being contacted *
-                            </FormLabel>
-                            <FormMessage />
+                            <label
+                              htmlFor={service}
+                              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              {service}
+                            </label>
                           </div>
-                        </FormItem>
+                        ))}
+                      </div>
+                      {selectedServices.length === 0 && (
+                        <p className="text-sm text-destructive mt-1">Please select at least one service</p>
                       )}
-                    />
+                    </div>
 
-                    <Button type="submit" className="w-full group" size="lg" disabled={isSubmitting}>
-                      {isSubmitting ? "Sending..." : "Request Free Quote"}
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium mb-2">
+                        Project Details *
+                      </label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your project..."
+                        className="min-h-[120px]"
+                        required
+                      />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} />
+                    </div>
+
+                    <div>
+                      <label htmlFor="contactMethod" className="block text-sm font-medium mb-2">
+                        Preferred Contact Method *
+                      </label>
+                      <Select value={contactMethod} onValueChange={setContactMethod}>
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="email">Email</SelectItem>
+                          <SelectItem value="phone">Phone</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <input type="hidden" name="contactMethod" value={contactMethod} />
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <Checkbox
+                        id="gdprConsent"
+                        checked={gdprConsent}
+                        onCheckedChange={(checked) => setGdprConsent(checked as boolean)}
+                        required
+                      />
+                      <label
+                        htmlFor="gdprConsent"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        I agree to the privacy policy and consent to being contacted *
+                      </label>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="w-full group"
+                      size="lg"
+                      disabled={state.submitting || selectedServices.length === 0 || !gdprConsent}
+                    >
+                      {state.submitting ? "Sending..." : "Request Free Quote"}
                       <motion.span
                         className="inline-block ml-2"
                         animate={{ x: [0, 4, 0] }}
@@ -435,7 +385,7 @@ const onSubmit = async (data: FormData) => {
                       </motion.span>
                     </Button>
                   </form>
-                </Form>
+                )}
               </div>
             </motion.div>
           </div>
