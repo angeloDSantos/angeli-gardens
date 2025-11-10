@@ -13,6 +13,11 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import homeCarousel1 from "@/assets/home-carousel-1.jpg";
+import homeCarousel2 from "@/assets/home-carousel-2.jpg";
+import homeCarousel3 from "@/assets/home-carousel-3.jpg";
+import homeCarousel4 from "@/assets/home-carousel-4.jpg";
+import homeCarousel5 from "@/assets/home-carousel-5.jpg";
 import lawnProject1 from "@/assets/lawn-project-1.jpg";
 import lawnProject2 from "@/assets/lawn-project-2.jpg";
 import lawnProject3 from "@/assets/lawn-project-3.jpg";
@@ -26,6 +31,11 @@ const Home = () => {
   );
 
   const carouselImages = [
+    homeCarousel1,
+    homeCarousel2,
+    homeCarousel3,
+    homeCarousel4,
+    homeCarousel5,
     lawnProject1,
     lawnProject2,
     lawnProject3,
