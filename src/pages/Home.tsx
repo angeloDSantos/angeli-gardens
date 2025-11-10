@@ -13,12 +13,6 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
-import beforeAfter1 from "@/assets/before-after-1.jpg";
-import beforeAfter2 from "@/assets/before-after-2.jpg";
-import beforeAfter3 from "@/assets/before-after-3.jpg";
-import beforeAfter4 from "@/assets/before-after-4.jpg";
-import beforeAfter5 from "@/assets/before-after-5.jpg";
-import beforeAfter6 from "@/assets/before-after-6.jpg";
 import lawnProject1 from "@/assets/lawn-project-1.jpg";
 import lawnProject2 from "@/assets/lawn-project-2.jpg";
 import lawnProject3 from "@/assets/lawn-project-3.jpg";
@@ -38,12 +32,6 @@ const Home = () => {
     lawnProject4,
     lawnProject5,
     lawnProject6,
-    beforeAfter1,
-    beforeAfter2,
-    beforeAfter3,
-    beforeAfter4,
-    beforeAfter5,
-    beforeAfter6,
     project1,
     project2,
     project3,
