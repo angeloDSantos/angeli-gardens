@@ -20,6 +20,11 @@ import lawnProject3 from "@/assets/lawn-project-3.jpg";
 import lawnProject4 from "@/assets/lawn-project-4.jpg";
 import lawnProject5 from "@/assets/lawn-project-5.jpg";
 import lawnProject6 from "@/assets/lawn-project-6.jpg";
+import newProject1 from "@/assets/new-project-1.jpg";
+import newProject2 from "@/assets/new-project-2.jpg";
+import newProject3 from "@/assets/new-project-3.jpg";
+import newProject4 from "@/assets/new-project-4.jpg";
+import newProject5 from "@/assets/new-project-5.jpg";
 
 interface Project {
   id: number;
@@ -196,6 +201,56 @@ const Portfolio = () => {
       solution: "Weekly professional visits with precise mowing and striping technique",
       outcome: "Consistently beautiful lawn that remains pristine year-round",
       image: lawnProject6,
+    },
+    {
+      id: 17,
+      title: "Driveway & Lawn Edging",
+      category: "landscaping",
+      description: "Professional driveway landscaping with pristine lawn edges",
+      challenge: "Creating clean, defined edges between driveway and lawn areas",
+      solution: "Expert edging work with careful attention to curves and lines",
+      outcome: "Neat, well-defined outdoor space with enhanced curb appeal",
+      image: newProject1,
+    },
+    {
+      id: 18,
+      title: "Artificial Grass & Screening",
+      category: "landscaping",
+      description: "Modern artificial grass installation with decorative planting",
+      challenge: "Creating a low-maintenance garden with year-round appeal",
+      solution: "Quality artificial grass with timber screening and potted feature trees",
+      outcome: "Beautiful, maintenance-free garden space perfect for relaxation",
+      image: newProject2,
+    },
+    {
+      id: 19,
+      title: "Contemporary Garden Design",
+      category: "landscaping",
+      description: "Complete garden transformation with artificial grass and planting",
+      challenge: "Modernizing a traditional garden space with low-maintenance solutions",
+      solution: "Premium artificial grass with curved borders and diverse planting scheme",
+      outcome: "Stunning contemporary garden that looks perfect all year",
+      image: newProject3,
+    },
+    {
+      id: 20,
+      title: "Residential Driveway Enhancement",
+      category: "landscaping",
+      description: "Driveway and surrounding lawn improvement project",
+      challenge: "Enhancing driveway aesthetics while maintaining healthy lawns",
+      solution: "Professional edging and lawn care around residential driveway",
+      outcome: "Polished, welcoming entrance with beautifully maintained verges",
+      image: newProject4,
+    },
+    {
+      id: 21,
+      title: "Artificial Lawn Installation",
+      category: "landscaping",
+      description: "Premium artificial grass with ornamental borders",
+      challenge: "Creating a perfect lawn that requires minimal upkeep",
+      solution: "High-quality artificial turf with carefully designed planted borders",
+      outcome: "Flawless green space that looks immaculate throughout the year",
+      image: newProject5,
     },
   ];
 
