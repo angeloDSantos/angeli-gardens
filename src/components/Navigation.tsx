@@ -84,30 +84,40 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
             {navLinks.map((link) => (
-              <Button
+              <motion.div
                 key={link.path}
-                variant={location.pathname === link.path ? "default" : "ghost"}
-                size="sm"
-                asChild
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Link to={link.path}>
-                  {link.name}
-                </Link>
-              </Button>
+                <Button
+                  variant={location.pathname === link.path ? "default" : "ghost"}
+                  size="sm"
+                  asChild
+                >
+                  <Link to={link.path}>
+                    {link.name}
+                  </Link>
+                </Button>
+              </motion.div>
             ))}
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <a href="tel:07542973733" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                Call Now
-              </a>
-            </Button>
-            <Button size="sm" asChild>
-              <Link to="/contact">Get a Quote</Link>
-            </Button>
+            <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
+              <Button variant="outline" size="sm" asChild>
+                <a href="tel:07542973733" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
+              <Button size="sm" asChild>
+                <Link to="/contact">Get a Quote</Link>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,26 +142,35 @@ const Navigation = () => {
           >
             <div className="container mx-auto px-4 py-6 space-y-4">
               {navLinks.map((link) => (
-                <Link
+                <motion.div
                   key={link.path}
-                  to={link.path}
-                  className={`block py-2 text-base font-medium transition-colors hover:text-primary ${
-                    location.pathname === link.path ? "text-primary" : "text-foreground/80"
-                  }`}
+                  whileTap={{ scale: 0.98, x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    to={link.path}
+                    className={`block py-2 text-base font-medium transition-colors hover:text-primary ${
+                      location.pathname === link.path ? "text-primary" : "text-foreground/80"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="tel:07542973733" className="flex items-center justify-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    Call Now
-                  </a>
-                </Button>
-                <Button className="w-full" asChild>
-                  <Link to="/contact">Get a Quote</Link>
-                </Button>
+                <motion.div whileTap={{ scale: 0.98 }}>
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="tel:07542973733" className="flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      Call Now
+                    </a>
+                  </Button>
+                </motion.div>
+                <motion.div whileTap={{ scale: 0.98 }}>
+                  <Button className="w-full" asChild>
+                    <Link to="/contact">Get a Quote</Link>
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </motion.div>
