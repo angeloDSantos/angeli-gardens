@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, Award, CheckCircle2, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import ClickSpark from "@/components/ClickSpark";
 import logo from "@/assets/logo.jpg";
 
 const Navigation = () => {
@@ -50,6 +51,7 @@ const Navigation = () => {
 
       {/* Main Navigation */}
       <nav className="sticky top-0 z-50 bg-white shadow-md border-b border-primary/20">
+      <ClickSpark sparkColor="hsl(79, 27%, 48%)">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo and Badges */}
@@ -176,6 +178,7 @@ const Navigation = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </ClickSpark>
       </nav>
     </>
   );
