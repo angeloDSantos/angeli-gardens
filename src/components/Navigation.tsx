@@ -31,7 +31,7 @@ const Navigation = () => {
   ];
 
   return (
-    <>
+    <div className="sticky top-0 z-50">
       {/* Top Contact Bar */}
       <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
@@ -158,7 +158,7 @@ const Navigation = () => {
         )}
       </AnimatePresence>
       </nav>
-    </>
+    </div>
   );
 };
 
