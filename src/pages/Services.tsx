@@ -190,7 +190,7 @@ const Services = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
             <p className="text-xl text-primary-foreground/90">
-              Comprehensive garden and landscaping solutions for homes across London, Surrey & Berkshire
+              Comprehensive garden and landscaping solutions for private, communal and commercial properties across London, Surrey & Berkshire
             </p>
           </motion.div>
         </div>
