@@ -25,7 +25,7 @@ const Services = () => {
       icon: Leaf,
       title: "Regular Maintenance",
       description: "Keep your garden in perfect condition year-round",
-      features: ["Weekly/fortnightly visits", "Lawn mowing & edging", "Weeding & tidying", "Seasonal care"],
+      features: ["Weekly/fortnightly/monthly visits", "Lawn mowing & edging", "Weeding & tidying", "Seasonal care"],
     },
     {
       icon: Scissors,
