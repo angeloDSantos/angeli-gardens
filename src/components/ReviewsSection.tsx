@@ -25,10 +25,16 @@ export const ReviewsSection = () => {
           .select("*")
           .eq("approved", true)
           .order("created_at", { ascending: false })
-          .limit(4);
+          .limit(10);
 
         if (error) throw error;
-        setReviews(data || []);
+        
+        // Filter out Hajar H's review and take first 4
+        const filteredReviews = (data || [])
+          .filter(review => review.name !== "Hajar H")
+          .slice(0, 4);
+        
+        setReviews(filteredReviews);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {
