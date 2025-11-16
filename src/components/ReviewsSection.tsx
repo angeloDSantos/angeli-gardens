@@ -25,7 +25,7 @@ export const ReviewsSection = () => {
           .select("*")
           .eq("approved", true)
           .order("created_at", { ascending: false })
-          .limit(6);
+          .limit(3);
 
         if (error) throw error;
         setReviews(data || []);
@@ -62,20 +62,18 @@ export const ReviewsSection = () => {
       {reviews.map((review) => (
         <Card key={review.id} className="hover:shadow-lg transition-shadow">
           <CardHeader>
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-semibold">{review.name.charAt(0).toUpperCase()}</h3>
-                  <div className="flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold">
-                    {review.rating}
-                  </div>
+            <div className="flex items-start justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <h3 className="font-semibold text-lg">{review.name}</h3>
+                <div className="flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold">
+                  {review.rating}
                 </div>
-                {review.location && (
-                  <p className="text-sm text-muted-foreground">Job location: {review.location}</p>
-                )}
               </div>
             </div>
-            <h4 className="font-semibold text-base mt-2">{review.title}</h4>
+            {review.location && (
+              <p className="text-sm text-muted-foreground mb-2">Job location: {review.location}</p>
+            )}
+            <h4 className="font-semibold text-base">{review.title}</h4>
             <p className="text-xs text-muted-foreground">Posted {formatDate(review.created_at)}</p>
           </CardHeader>
           <CardContent>
