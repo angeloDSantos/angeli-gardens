@@ -25,7 +25,7 @@ export const ReviewsSection = () => {
           .select("*")
           .eq("approved", true)
           .order("created_at", { ascending: false })
-          .limit(3);
+          .limit(4);
 
         if (error) throw error;
         setReviews(data || []);
