@@ -2,13 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { Star } from "lucide-react";
 
-export const ReviewForm = () => {
+interface ReviewFormProps {
+  trigger?: React.ReactNode;
+}
+
+export const ReviewForm = ({ trigger }: ReviewFormProps) => {
+  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     location: "",
@@ -39,6 +43,8 @@ export const ReviewForm = () => {
         title: "",
         review_text: "",
       });
+      
+      setOpen(false);
     } catch (error) {
       console.error("Error submitting review:", error);
       toast({
@@ -52,12 +58,18 @@ export const ReviewForm = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle>Leave a Review</CardTitle>
-        <CardDescription>Share your experience with Angeli Gardens</CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Dialog open={open} onOpenChange={setOpen}>
+      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
+      {!trigger && (
+        <DialogTrigger asChild>
+          <Button size="lg">Leave a Review</Button>
+        </DialogTrigger>
+      )}
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Leave a Review</DialogTitle>
+          <DialogDescription>Share your experience with Angeli Gardens</DialogDescription>
+        </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -128,7 +140,7 @@ export const ReviewForm = () => {
             {isSubmitting ? "Submitting..." : "Submit Review"}
           </Button>
         </form>
-      </CardContent>
-    </Card>
+      </DialogContent>
+    </Dialog>
   );
 };

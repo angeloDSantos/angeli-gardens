@@ -25,7 +25,6 @@ import lawnProject4 from "@/assets/lawn-project-4.jpg";
 import lawnProject5 from "@/assets/lawn-project-5.jpg";
 import lawnProject6 from "@/assets/lawn-project-6.jpg";
 import { ReviewsSection } from "@/components/ReviewsSection";
-import { ReviewForm } from "@/components/ReviewForm";
 
 const Home = () => {
   const autoplayPlugin = useRef(
@@ -157,7 +156,6 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mb-16"
           >
             <ReviewsSection />
           </motion.div>
@@ -167,8 +165,11 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
+            className="text-center mt-8"
           >
-            <ReviewForm />
+            <Button size="lg" asChild>
+              <Link to="/reviews">View All Reviews</Link>
+            </Button>
           </motion.div>
         </div>
       </section>
