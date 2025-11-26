@@ -36,7 +36,9 @@ const FAQ = () => {
     },
     {
       question: "What services do you offer?",
-      answer: "We offer comprehensive garden and landscaping services including: regular garden maintenance, hedge trimming & topiary, tree pruning & surgery, garden clearance, planting & borders, lawn treatment & renovation, patios & paving, fencing, decking, shed bases & installation, raised beds & planters, garden walls & structures, turfing & artificial grass, and pressure washing. Visit our Services page for full details.",
+      answer: "We offer comprehensive garden and landscaping services including: regular garden maintenance, hedge trimming & topiary, tree pruning & surgery, garden clearance, planting & borders, lawn treatment & renovation, patios & paving, fencing, decking, shed bases & installation, raised beds & planters, garden walls & structures, turfing & artificial grass, and pressure washing.",
+      hasLinks: true,
+      links: [{ text: "View our Services page", to: "/services" }],
     },
     {
       question: "How long have you been in business?",
