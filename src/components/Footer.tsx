@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { CheckatradeWidget } from "@/components/CheckatradeWidget";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -17,16 +18,21 @@ const Footer = () => {
             <p className="text-sm text-background/80">
               Transform your outdoor space with expert landscaping and garden services across London, Surrey & Berkshire.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-background/80 hover:text-primary transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-background/80 hover:text-primary transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-background/80 hover:text-primary transition-colors">
-                <Linkedin size={20} />
-              </a>
+            <div className="flex flex-col gap-4">
+              <div className="flex space-x-4">
+                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+              <div className="pt-2">
+                <CheckatradeWidget variant="badge" className="opacity-90 hover:opacity-100" />
+              </div>
             </div>
           </div>
 

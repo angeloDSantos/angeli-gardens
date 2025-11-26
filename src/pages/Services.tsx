@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
 import {
   Leaf,
   Scissors,
@@ -112,6 +113,12 @@ const Services = () => {
 
   return (
     <div>
+      <SEOHead
+        title="Landscaping & Garden Services in London, Surrey & Berkshire | Angeli Gardens"
+        description="Professional landscaping and garden services across London, Surrey & Berkshire. Checkatrade approved with 9.75/10 rating. Garden maintenance, patios, decking, fencing, turfing, and more. Free quotes."
+        keywords="landscaping London, garden maintenance Surrey, landscaping Berkshire, patios London, decking Surrey, fencing Berkshire, turfing London, hedge trimming Surrey, tree pruning Berkshire, garden clearance London, Checkatrade approved landscaper"
+        canonical="https://www.angeligardens.co.uk/services"
+      />
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
           {/* Floating gardening animations */}
@@ -352,6 +359,17 @@ const Services = () => {
               <span className="px-6 py-2 bg-primary-foreground/10 rounded-full">London</span>
               <span className="px-6 py-2 bg-primary-foreground/10 rounded-full">Surrey</span>
               <span className="px-6 py-2 bg-primary-foreground/10 rounded-full">Berkshire</span>
+            </div>
+            <div className="space-y-4 text-primary-foreground/90 max-w-3xl mx-auto text-left mb-6">
+              <p className="text-lg">
+                <strong>London Landscaping Services:</strong> From Central London to Greater London, we provide expert garden maintenance, landscaping, and hardscaping services. Whether you need regular garden upkeep in Kensington, a new patio in Richmond, or complete garden design in Wimbledon, we've got you covered.
+              </p>
+              <p className="text-lg">
+                <strong>Surrey Garden Services:</strong> Serving Surrey homeowners and businesses with professional landscaping, lawn care, and garden maintenance. From Guildford to Woking, Epsom to Reigate, we deliver quality garden services across the county.
+              </p>
+              <p className="text-lg">
+                <strong>Berkshire Landscaping:</strong> Expert garden and landscaping services throughout Berkshire. From Reading to Windsor, Maidenhead to Slough, we transform outdoor spaces with quality craftsmanship and attention to detail.
+              </p>
             </div>
             <p className="text-primary-foreground/80">
               Not sure if we cover your area? Give us a call and we'll be happy to discuss your project.

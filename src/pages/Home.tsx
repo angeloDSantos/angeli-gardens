@@ -25,6 +25,8 @@ import lawnProject4 from "@/assets/lawn-project-4.jpg";
 import lawnProject5 from "@/assets/lawn-project-5.jpg";
 import lawnProject6 from "@/assets/lawn-project-6.jpg";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { CheckatradeWidget } from "@/components/CheckatradeWidget";
+import { SEOHead } from "@/components/SEOHead";
 
 const Home = () => {
   const autoplayPlugin = useRef(
@@ -58,6 +60,7 @@ const Home = () => {
 
   return (
     <div className="overflow-x-hidden">
+      <SEOHead />
       {/* Hero Section */}
       <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
         <Carousel
@@ -133,6 +136,20 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Checkatrade Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <CheckatradeWidget />
+          </motion.div>
         </div>
       </section>
 

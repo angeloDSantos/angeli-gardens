@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft, Leaf, Flower2, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { SEOHead } from "@/components/SEOHead";
 import TiltedCard from "@/components/TiltedCard";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -266,6 +267,12 @@ const Portfolio = () => {
 
   return (
     <div>
+      <SEOHead
+        title="Our Portfolio | Landscaping Projects in London, Surrey & Berkshire | Angeli Gardens"
+        description="View our portfolio of landscaping and garden projects across London, Surrey & Berkshire. See before and after transformations, patios, decking, lawn care, and complete garden designs. Checkatrade approved."
+        keywords="Angeli Gardens portfolio, landscaping projects London, garden transformations Surrey, before after landscaping, landscaping examples Berkshire"
+        canonical="https://www.angeligardens.co.uk/portfolio"
+      />
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
         {/* Animated floating elements */}

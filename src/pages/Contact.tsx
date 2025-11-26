@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { SEOHead } from "@/components/SEOHead";
 import {
   Select,
   SelectContent,
@@ -42,6 +43,12 @@ const Contact = () => {
   };
   return (
     <div>
+      <SEOHead
+        title="Contact Angeli Gardens | Free Quote | London, Surrey & Berkshire"
+        description="Contact Angeli Gardens for a free, no-obligation quote. Expert landscaping and garden services across London, Surrey & Berkshire. Call 07542 973733 or request a quote online. Checkatrade approved."
+        keywords="contact Angeli Gardens, free quote landscaping, landscaper phone number, garden services contact, landscaping quote London, garden maintenance quote Surrey"
+        canonical="https://www.angeligardens.co.uk/contact"
+      />
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
         {/* Animated floating leaves */}

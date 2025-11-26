@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, Users, Target, Heart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
 import project3 from "@/assets/project-3.jpg";
 
 const About = () => {
@@ -37,6 +38,12 @@ const About = () => {
 
   return (
     <div>
+      <SEOHead
+        title="About Angeli Gardens | Expert Landscapers in London, Surrey & Berkshire"
+        description="Learn about Angeli Gardens - expert landscapers serving London, Surrey & Berkshire for over 10 years. Checkatrade approved with 500+ projects completed. Quality craftsmanship, customer focus, and sustainability."
+        keywords="about Angeli Gardens, landscaper London, garden services Surrey, landscaping company Berkshire, professional landscapers"
+        canonical="https://www.angeligardens.co.uk/about"
+      />
       {/* Hero Section */}
       <section className="relative py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">

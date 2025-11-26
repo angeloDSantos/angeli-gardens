@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ReviewForm } from "@/components/ReviewForm";
+import { CheckatradeWidget } from "@/components/CheckatradeWidget";
+import { SEOHead } from "@/components/SEOHead";
 import { Star } from "lucide-react";
 
 interface Review {
@@ -57,6 +59,12 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <SEOHead
+        title="Client Reviews & Testimonials | Angeli Gardens | Checkatrade 9.75/10"
+        description="Read genuine client reviews for Angeli Gardens. Checkatrade approved with 9.75/10 rating and 456+ reviews. See what our satisfied customers say about our landscaping and garden services in London, Surrey & Berkshire."
+        keywords="Angeli Gardens reviews, Checkatrade reviews, landscaping reviews London, garden services reviews Surrey, Checkatrade 9.75 rating, landscaping testimonials Berkshire"
+        canonical="https://www.angeligardens.co.uk/reviews"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -69,6 +77,16 @@ const Reviews = () => {
             Read what our satisfied customers have to say about our work
           </p>
           <ReviewForm trigger={<Button size="lg">Leave a Review</Button>} />
+        </motion.div>
+
+        {/* Checkatrade Widget */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-12 max-w-4xl mx-auto"
+        >
+          <CheckatradeWidget />
         </motion.div>
 
         {/* Reviews Grid */}
