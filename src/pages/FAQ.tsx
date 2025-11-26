@@ -14,7 +14,12 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What areas do you serve?",
-      answer: "We proudly serve residential and commercial clients across London, Surrey, and Berkshire. This includes areas such as Kensington, Richmond, Wimbledon, Guildford, Woking, Epsom, Reigate, Reading, Windsor, Maidenhead, and Slough. If you're unsure if we cover your area, please give us a call and we'll be happy to discuss your project.",
+      answer: "We proudly serve residential and commercial clients across London, Surrey, and Berkshire. This includes areas such as Kensington, Richmond, Wimbledon, Guildford, Woking, Epsom, Reigate, Reading, Windsor, Maidenhead, and Slough. View our area pages for London, Surrey, and Berkshire. If you're unsure if we cover your area, please give us a call and we'll be happy to discuss your project.",
+      answerLinks: [
+        { text: "London", to: "/areas/london" },
+        { text: "Surrey", to: "/areas/surrey" },
+        { text: "Berkshire", to: "/areas/berkshire" }
+      ],
     },
     {
       question: "How much do your services cost?",
@@ -136,6 +141,19 @@ const FAQ = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base leading-relaxed">
                   {faq.answer}
+                  {faq.answerLinks && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {faq.answerLinks.map((link, linkIndex) => (
+                        <Link
+                          key={linkIndex}
+                          to={link.to}
+                          className="text-primary hover:underline font-medium"
+                        >
+                          {link.text}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}

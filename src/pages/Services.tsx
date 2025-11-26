@@ -365,13 +365,13 @@ const Services = () => {
             </div>
             <div className="space-y-4 text-primary-foreground/90 max-w-3xl mx-auto text-left mb-6">
               <p className="text-lg">
-                <strong>London Landscaping Services:</strong> From Central London to Greater London, we provide expert garden maintenance, landscaping, and hardscaping services. Whether you need regular garden upkeep in Kensington, a new patio in Richmond, or complete garden design in Wimbledon, we've got you covered.
+                <strong>London Landscaping Services:</strong> From Central London to Greater London, we provide expert garden maintenance, landscaping, and hardscaping services. Whether you need regular garden upkeep in Kensington, a new patio in Richmond, or complete garden design in Wimbledon, we've got you covered. <Link to="/areas/london" className="underline font-semibold hover:text-primary-foreground">View all London areas we serve</Link>.
               </p>
               <p className="text-lg">
-                <strong>Surrey Garden Services:</strong> Serving Surrey homeowners and businesses with professional landscaping, lawn care, and garden maintenance. From Guildford to Woking, Epsom to Reigate, we deliver quality garden services across the county.
+                <strong>Surrey Garden Services:</strong> Serving Surrey homeowners and businesses with professional landscaping, lawn care, and garden maintenance. From Guildford to Woking, Epsom to Reigate, we deliver quality garden services across the county. <Link to="/areas/surrey" className="underline font-semibold hover:text-primary-foreground">View all Surrey areas we serve</Link>.
               </p>
               <p className="text-lg">
-                <strong>Berkshire Landscaping:</strong> Expert garden and landscaping services throughout Berkshire. From Reading to Windsor, Maidenhead to Slough, we transform outdoor spaces with quality craftsmanship and attention to detail.
+                <strong>Berkshire Landscaping:</strong> Expert garden and landscaping services throughout Berkshire. From Reading to Windsor, Maidenhead to Slough, we transform outdoor spaces with quality craftsmanship and attention to detail. <Link to="/areas/berkshire" className="underline font-semibold hover:text-primary-foreground">View all Berkshire areas we serve</Link>.
               </p>
             </div>
             <p className="text-primary-foreground/80">

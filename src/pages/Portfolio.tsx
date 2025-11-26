@@ -450,15 +450,15 @@ const Portfolio = () => {
 
               <div className="pt-6 border-t">
                 <p className="text-center text-muted-foreground mb-4">
-                  Inspired by this transformation?
+                  Inspired by this transformation? View our <Link to="/services" className="text-primary hover:underline">services</Link> or check out more in our <Link to="/portfolio" className="text-primary hover:underline">portfolio</Link>.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="inline-flex items-center justify-center h-11 px-6 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
                   >
                     Get Your Free Quote
-                  </a>
+                  </Link>
                   <a
                     href="tel:07542973733"
                     className="inline-flex items-center justify-center h-11 px-6 border border-input rounded-md font-medium hover:bg-accent transition-colors"

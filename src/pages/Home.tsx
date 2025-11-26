@@ -113,9 +113,18 @@ const Home = () => {
                 </a>
               </Button>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-sm text-background/80">
-              <MapPin size={18} />
-              <span>Angeli Gardens serving London • Surrey • Berkshire</span>
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 text-sm text-background/80">
+              <div className="flex items-center gap-2">
+                <MapPin size={18} />
+                <span>Angeli Gardens serving</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Link to="/areas/london" className="underline hover:text-background">London</Link>
+                <span>•</span>
+                <Link to="/areas/surrey" className="underline hover:text-background">Surrey</Link>
+                <span>•</span>
+                <Link to="/areas/berkshire" className="underline hover:text-background">Berkshire</Link>
+              </div>
             </div>
           </motion.div>
         </div>

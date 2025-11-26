@@ -128,7 +128,7 @@ const Contact = () => {
             >
               <h2 className="text-3xl font-bold mb-6">Contact Angeli Gardens</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Get in touch with <strong>Angeli Gardens</strong> for a free consultation and quote. We typically respond within 48 hours.
+                Get in touch with <strong>Angeli Gardens</strong> for a free consultation and quote. We typically respond within 48 hours. Before contacting us, you might want to check our <Link to="/faq" className="text-primary hover:underline">FAQ</Link> or view our <Link to="/services" className="text-primary hover:underline">services</Link>.
               </p>
 
               <div className="space-y-6">

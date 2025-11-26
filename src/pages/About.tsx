@@ -88,7 +88,7 @@ const About = () => {
                   From regular maintenance to complete landscape transformations, we approach every project with the same dedication to quality, sustainability, and customer satisfaction. We come fully equipped with all professional tools, so you never have to worry about additional equipment costs.
                 </p>
                 <p>
-                  Today, we proudly serve clients across London, Surrey, and Berkshire, bringing expertise, reliability, and creative vision to gardens of all sizes.
+                  Today, we proudly serve clients across <Link to="/areas/london" className="text-primary hover:underline">London</Link>, <Link to="/areas/surrey" className="text-primary hover:underline">Surrey</Link>, and <Link to="/areas/berkshire" className="text-primary hover:underline">Berkshire</Link>, bringing expertise, reliability, and creative vision to gardens of all sizes. View our <Link to="/services" className="text-primary hover:underline">services</Link> or check out our <Link to="/portfolio" className="text-primary hover:underline">portfolio</Link> to see our work.
                 </p>
               </div>
             </motion.div>
