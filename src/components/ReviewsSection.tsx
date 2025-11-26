@@ -25,16 +25,19 @@ export const ReviewsSection = () => {
           .select("*")
           .eq("approved", true)
           .order("created_at", { ascending: false })
-          .limit(10);
+          .limit(15);
 
         if (error) throw error;
         
-        // Filter out Hajar H's review and take first 4
+        // Filter out Hajar H's review
         const filteredReviews = (data || [])
-          .filter(review => review.name !== "Hajar H")
-          .slice(0, 4);
+          .filter(review => review.name !== "Hajar H");
         
-        setReviews(filteredReviews);
+        // Show 9 reviews on desktop, 4 on mobile
+        const checkDesktop = () => window.innerWidth >= 1024;
+        const reviewsToShow = checkDesktop() ? filteredReviews.slice(0, 9) : filteredReviews.slice(0, 4);
+        
+        setReviews(reviewsToShow);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {
@@ -64,7 +67,7 @@ export const ReviewsSection = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
       {reviews.map((review) => (
         <Card key={review.id} className="hover:shadow-lg transition-shadow">
           <CardHeader>

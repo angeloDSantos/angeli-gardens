@@ -96,8 +96,11 @@ const Home = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-balance tracking-tight">
               Transform Your Outdoor Space
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-background/90 font-light">
+            <p className="text-xl md:text-2xl mb-4 text-background/90 font-light">
               Expert landscaping and garden services across London, Surrey & Berkshire
+            </p>
+            <p className="text-lg md:text-xl mb-8 text-background/80 font-light">
+              <a href="https://www.checkatrade.com/trades/angeligardens" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-background">Checkatrade approved</a> with 9.75/10 rating
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="text-lg h-14 px-8">

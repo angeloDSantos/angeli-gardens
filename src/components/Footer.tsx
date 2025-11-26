@@ -68,16 +68,30 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Areas & Info */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-sm text-background/80">
-              <li>Garden Maintenance</li>
-              <li>Landscaping</li>
-              <li>Patios & Decking</li>
-              <li>Turfing & Lawn Care</li>
-              <li>Fencing</li>
-              <li>Garden Design</li>
+            <h3 className="font-heading text-lg font-semibold mb-4">Areas We Serve</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/areas/london" className="text-background/80 hover:text-primary transition-colors">
+                  Landscaping in London
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/surrey" className="text-background/80 hover:text-primary transition-colors">
+                  Landscaping in Surrey
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/berkshire" className="text-background/80 hover:text-primary transition-colors">
+                  Landscaping in Berkshire
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link to="/faq" className="text-background/80 hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -110,7 +124,18 @@ const Footer = () => {
             <p className="text-sm text-background/60">
               © {currentYear} Angeli Gardens Ltd. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-background/60">
+            <div className="flex flex-wrap gap-6 text-sm text-background/60 justify-center">
+              <a 
+                href="https://www.checkatrade.com/trades/angeligardens" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                View on Checkatrade
+              </a>
+              <Link to="/faq" className="hover:text-primary transition-colors">
+                FAQ
+              </Link>
               <Link to="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>

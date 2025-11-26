@@ -196,8 +196,11 @@ const Services = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl text-primary-foreground/90">
+            <p className="text-xl text-primary-foreground/90 mb-4">
               Comprehensive garden and landscaping solutions for private, communal and commercial properties across London, Surrey & Berkshire
+            </p>
+            <p className="text-lg text-primary-foreground/80">
+              <a href="https://www.checkatrade.com/trades/angeligardens" target="_blank" rel="noopener noreferrer" className="underline font-semibold">Checkatrade approved</a> with 9.75/10 rating - Trusted by 456+ customers
             </p>
           </motion.div>
         </div>

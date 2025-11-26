@@ -192,7 +192,7 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Let's Create Something Beautiful</h2>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Ready to transform your outdoor space? Get in touch for a free consultation.
+              Ready to transform your outdoor space? Get in touch for a free consultation. As a <a href="https://www.checkatrade.com/trades/angeligardens" target="_blank" rel="noopener noreferrer" className="underline font-semibold">Checkatrade approved business</a> with a 9.75/10 rating, you can trust us to deliver exceptional results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
