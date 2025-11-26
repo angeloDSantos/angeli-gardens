@@ -516,12 +516,12 @@ const Portfolio = () => {
               Let's create something beautiful together. Get your free, no-obligation quote today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center h-14 px-8 bg-background text-foreground rounded-md font-medium hover:bg-background/90 transition-colors"
               >
                 Get a Free Quote
-              </a>
+              </Link>
               <a
                 href="tel:07542973733"
                 className="inline-flex items-center justify-center h-14 px-8 border-2 border-primary-foreground/30 rounded-md font-medium hover:bg-primary-foreground/10 transition-colors"
