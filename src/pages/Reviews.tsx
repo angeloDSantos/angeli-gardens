@@ -72,9 +72,9 @@ const Reviews = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Client Reviews</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Angeli Gardens Reviews</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Read what our satisfied customers have to say about our work
+            Read what our satisfied customers have to say about Angeli Gardens and our work
           </p>
           <ReviewForm trigger={<Button size="lg">Leave a Review</Button>} />
         </motion.div>

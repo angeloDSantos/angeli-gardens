@@ -20,13 +20,13 @@ const Footer = () => {
             </p>
             <div className="flex flex-col gap-4">
               <div className="flex space-x-4">
-                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <a href="https://www.facebook.com/p/Angeli-Gardens-Ltd-61566497512007/" target="_blank" rel="noopener noreferrer" className="text-background/80 hover:text-primary transition-colors" aria-label="Angeli Gardens Facebook">
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <a href="#" className="text-background/80 hover:text-primary transition-colors" aria-label="Angeli Gardens Instagram">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="text-background/80 hover:text-primary transition-colors">
+                <a href="#" className="text-background/80 hover:text-primary transition-colors" aria-label="Angeli Gardens LinkedIn">
                   <Linkedin size={20} />
                 </a>
               </div>

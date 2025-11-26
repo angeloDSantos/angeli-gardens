@@ -332,7 +332,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Portfolio</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Angeli Gardens Portfolio</h1>
             <p className="text-xl text-primary-foreground/90">
               Explore our recent projects and see how we've transformed gardens across the region
             </p>

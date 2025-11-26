@@ -16,9 +16,9 @@ export const SEOHead = ({
   ogImage,
 }: SEOHeadProps) => {
   useEffect(() => {
-    const defaultTitle = "Angeli Gardens - Premium Landscaping & Garden Services | London, Surrey & Berkshire | Checkatrade Approved";
-    const defaultDescription = "Angeli Gardens - Checkatrade approved landscaping experts. Transform your outdoor space with expert garden maintenance, patios, decking, fencing, and landscaping across London, Surrey & Berkshire. 9.75/10 rating. Free quotes.";
-    const defaultKeywords = "landscaping London, garden maintenance Surrey, landscaping services Berkshire, garden design, patios, decking, turfing, hedge trimming, tree pruning, garden clearance, luxury landscaping, Checkatrade approved landscaper, Checkatrade gardener, landscaping near me, garden services London, garden maintenance Surrey, landscaping Berkshire";
+    const defaultTitle = "Angeli Gardens | Premium Landscaping & Garden Services | London, Surrey & Berkshire | Checkatrade Approved";
+    const defaultDescription = "Angeli Gardens - Your trusted landscaping experts. Angeli Gardens provides Checkatrade approved garden maintenance, patios, decking, fencing, and landscaping services across London, Surrey & Berkshire. Rated 9.75/10. Free quotes from Angeli Gardens.";
+    const defaultKeywords = "Angeli Gardens, Angeli Gardens landscaping, Angeli Gardens London, Angeli Gardens Surrey, Angeli Gardens Berkshire, landscaping London, garden maintenance Surrey, landscaping services Berkshire, garden design, patios, decking, turfing, hedge trimming, tree pruning, garden clearance, luxury landscaping, Checkatrade approved landscaper, Checkatrade gardener, landscaping near me, garden services London, garden maintenance Surrey, landscaping Berkshire";
     const defaultCanonical = "https://www.angeligardens.co.uk";
     const defaultOgImage = "https://storage.googleapis.com/gpt-engineer-file-uploads/1dJXwWZnvEdNuQxJzmejokIQllD2/social-images/social-1763163107906-logo.jpg";
 

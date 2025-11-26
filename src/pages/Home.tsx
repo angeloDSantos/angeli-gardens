@@ -94,10 +94,10 @@ const Home = () => {
             className="max-w-2xl text-background"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-balance tracking-tight">
-              Transform Your Outdoor Space
+              Angeli Gardens - Transform Your Outdoor Space
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-background/90 font-light">
-              Expert landscaping and garden services across London, Surrey & Berkshire
+              Angeli Gardens provides expert landscaping and garden services across London, Surrey & Berkshire
             </p>
             <p className="text-lg md:text-xl mb-8 text-background/80 font-light">
               <a href="https://www.checkatrade.com/trades/angeligardens" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-background">Checkatrade approved</a> with 9.75/10 rating
@@ -115,7 +115,7 @@ const Home = () => {
             </div>
             <div className="mt-8 flex items-center gap-2 text-sm text-background/80">
               <MapPin size={18} />
-              <span>Serving London • Surrey • Berkshire</span>
+              <span>Angeli Gardens serving London • Surrey • Berkshire</span>
             </div>
           </motion.div>
         </div>
@@ -165,9 +165,9 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Reviews</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Angeli Gardens Client Reviews</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              See what our satisfied customers have to say about our work
+              See what our satisfied customers have to say about Angeli Gardens and our work
             </p>
           </motion.div>
 
@@ -234,10 +234,10 @@ const Home = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your Garden?
+              Ready to Transform Your Garden with Angeli Gardens?
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Get a free, no-obligation quote today.
+              Get a free, no-obligation quote from Angeli Gardens today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild className="text-lg h-14 px-8">

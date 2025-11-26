@@ -195,7 +195,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Angeli Gardens Services</h1>
             <p className="text-xl text-primary-foreground/90 mb-4">
               Comprehensive garden and landscaping solutions for private, communal and commercial properties across London, Surrey & Berkshire
             </p>
@@ -246,7 +246,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Gardening & Maintenance</h2>
+            <h2 className="text-4xl font-bold mb-4">Angeli Gardens Gardening & Maintenance</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Regular care and expert maintenance to keep your garden thriving
             </p>
@@ -300,7 +300,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Hard & Soft Landscaping</h2>
+            <h2 className="text-4xl font-bold mb-4">Angeli Gardens Hard & Soft Landscaping</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Transform your outdoor space with quality construction and design
             </p>

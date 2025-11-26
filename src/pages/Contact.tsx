@@ -108,7 +108,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Angeli Gardens</h1>
             <p className="text-xl text-primary-foreground/90">
               Ready to transform your outdoor space? Request a free quote or book a consultation
             </p>
@@ -126,9 +126,9 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">Angeli Gardens</h2>
+              <h2 className="text-3xl font-bold mb-6">Contact Angeli Gardens</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Get in touch for a free consultation and quote. We typically respond within 48 hours.
+                Get in touch with <strong>Angeli Gardens</strong> for a free consultation and quote. We typically respond within 48 hours.
               </p>
 
               <div className="space-y-6">

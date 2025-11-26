@@ -59,7 +59,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Angeli Gardens</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Angeli Gardens - Expert Landscapers</h1>
             <p className="text-xl text-primary-foreground/90">
               Transforming outdoor spaces across London, Surrey & Berkshire for over a decade
             </p>
@@ -118,7 +118,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">By the Numbers</h2>
+            <h2 className="text-4xl font-bold mb-4">Angeli Gardens by the Numbers</h2>
             <p className="text-xl text-muted-foreground">
               Our track record speaks for itself
             </p>
@@ -151,7 +151,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Our Values</h2>
+            <h2 className="text-4xl font-bold mb-4">Angeli Gardens Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               What drives us to deliver excellence in every project
             </p>
