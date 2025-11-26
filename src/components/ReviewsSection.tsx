@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { replaceAnonymousName } from "@/lib/reviewNames";
 
 interface Review {
   id: string;
@@ -29,9 +30,13 @@ export const ReviewsSection = () => {
 
         if (error) throw error;
         
-        // Filter out Hajar H's review
+        // Filter out Hajar H's review and replace anonymous names
         const filteredReviews = (data || [])
-          .filter(review => review.name !== "Hajar H");
+          .filter(review => review.name !== "Hajar H")
+          .map(review => ({
+            ...review,
+            name: replaceAnonymousName(review.name, review.id)
+          }));
         
         // Show 9 reviews on desktop, 4 on mobile
         const checkDesktop = () => window.innerWidth >= 1024;

@@ -74,17 +74,17 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/areas/london" className="text-background/80 hover:text-primary transition-colors">
-                  Landscaping in London
+                  London
                 </Link>
               </li>
               <li>
                 <Link to="/areas/surrey" className="text-background/80 hover:text-primary transition-colors">
-                  Landscaping in Surrey
+                  Surrey
                 </Link>
               </li>
               <li>
                 <Link to="/areas/berkshire" className="text-background/80 hover:text-primary transition-colors">
-                  Landscaping in Berkshire
+                  Berkshire
                 </Link>
               </li>
               <li className="pt-2">

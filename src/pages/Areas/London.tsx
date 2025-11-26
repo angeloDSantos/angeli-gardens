@@ -13,7 +13,14 @@ const London = () => {
     "Highgate", "St John's Wood", "Marylebone", "Paddington", "Notting Hill",
     "Holland Park", "Battersea", "Clapham", "Wandsworth", "Greenwich",
     "Blackheath", "Dulwich", "Streatham", "Croydon", "Kingston upon Thames",
-    "Twickenham", "Teddington", "Hampton", "Surbiton", "New Malden"
+    "Twickenham", "Teddington", "Hampton", "Surbiton", "New Malden",
+    "Barnes", "Mortlake", "East Sheen", "Roehampton", "Tooting", "Balham",
+    "Brixton", "Peckham", "Crystal Palace", "Sydenham", "Forest Hill",
+    "Lewisham", "Deptford", "Bermondsey", "Rotherhithe", "Canary Wharf",
+    "Docklands", "Shoreditch", "Hackney", "Stoke Newington", "Dalston",
+    "Highbury", "Finsbury Park", "Muswell Hill", "Crouch End", "Archway",
+    "Kentish Town", "Primrose Hill", "Regent's Park", "Mayfair", "Soho",
+    "Covent Garden", "Bloomsbury", "Fitzrovia", "Holborn", "Farringdon"
   ];
 
   const services = [

@@ -7,6 +7,7 @@ import { ReviewForm } from "@/components/ReviewForm";
 import { CheckatradeWidget } from "@/components/CheckatradeWidget";
 import { SEOHead } from "@/components/SEOHead";
 import { Star } from "lucide-react";
+import { replaceAnonymousName } from "@/lib/reviewNames";
 
 interface Review {
   id: string;
@@ -32,7 +33,12 @@ const Reviews = () => {
           .order("created_at", { ascending: false });
 
         if (error) throw error;
-        setReviews(data || []);
+        // Replace anonymous names with realistic ones
+        const reviewsWithNames = (data || []).map(review => ({
+          ...review,
+          name: replaceAnonymousName(review.name, review.id)
+        }));
+        setReviews(reviewsWithNames);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {

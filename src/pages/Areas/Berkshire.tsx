@@ -11,7 +11,14 @@ const Berkshire = () => {
     "Reading", "Windsor", "Maidenhead", "Slough", "Bracknell", "Newbury",
     "Wokingham", "Ascot", "Eton", "Datchet", "Cookham", "Marlow",
     "Henley-on-Thames", "Twyford", "Wargrave", "Sonning", "Crowthorne",
-    "Sandhurst", "Yateley", "Camberley", "Farnborough", "Aldershot"
+    "Sandhurst", "Yateley", "Camberley", "Farnborough", "Aldershot",
+    "Caversham", "Tilehurst", "Earley", "Woodley", "Arborfield", "Finchampstead",
+    "Wokingham Without", "Shinfield", "Spencers Wood", "Three Mile Cross",
+    "Stratfield Mortimer", "Mortimer", "Burghfield", "Theale", "Pangbourne",
+    "Goring-on-Thames", "Streatley", "Basildon", "Lower Basildon", "Aldworth",
+    "Compton", "Hampstead Norreys", "Hermitage", "Cold Ash", "Thatcham",
+    "Midgham", "Woolhampton", "Aldermaston", "Tadley", "Baughurst",
+    "Kingsclere", "Overton", "Whitchurch", "Pangbourne", "Purley-on-Thames"
   ];
 
   const services = [

@@ -12,7 +12,14 @@ const Surrey = () => {
     "Esher", "Cobham", "Weybridge", "Walton-on-Thames", "Chertsey", "Staines",
     "Ashford", "Sunbury-on-Thames", "Camberley", "Farnham", "Godalming",
     "Haslemere", "Horley", "Redhill", "Caterham", "Oxted", "East Grinstead",
-    "Banstead", "Ewell", "Chessington", "Kingston", "New Malden", "Worplesdon"
+    "Banstead", "Ewell", "Chessington", "Kingston", "New Malden", "Worplesdon",
+    "Addlestone", "Byfleet", "West Byfleet", "Ottershaw", "Chobham", "Lightwater",
+    "Bagshot", "Windlesham", "Virginia Water", "Englefield Green", "Egham",
+    "Thorpe", "Shepperton", "Laleham", "Staines-upon-Thames", "Ashford",
+    "Stanwell", "Feltham", "Hampton", "Hampton Hill", "Teddington", "Hampton Wick",
+    "Thames Ditton", "Long Ditton", "Hinchley Wood", "Claygate", "Oxshott",
+    "Effingham", "Great Bookham", "Little Bookham", "Fetcham", "Ashtead",
+    "Leatherhead", "Bookham", "Great Bookham", "Little Bookham"
   ];
 
   const services = [
